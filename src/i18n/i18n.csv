@@ -1,0 +1,72 @@
+key,zh,en
+start,开始,Start
+settings,设置,Settings
+exit,退出,Exit
+language,语言,Language
+fullscreen,全屏 (F11),Fullscreen (F11)
+default_movement,默认移动,Default Movement
+default_movement.walk,前进,Walk
+default_movement.run,奔跑,Run
+bgm_volume,BGM 音量,BGM Volume
+can_not_exit,过场动画中不能退出,Can not exit in transition animation
+tip.default_keys,默认按键,Default Key
+tip.default_keys.interact,使用/交互,Interact
+tip.default_keys.cancel,取消,Cancel
+tip.default_keys.move,移动,Move
+tip.default_keys.run,奔跑,Run
+tip.default_keys.settings,设置,Settings
+tip.default_keys.items,道具,Items
+tip.default_keys.teleport,传送,Teleport
+tip.about_game,游戏相关,About Game
+tip.about_game.content,"通过探索并与环境和人物互动你会得到各种物品。
+
+拾取物品后你就可以从道具栏中选择它。
+
+选中的物品可以和道具栏其他物品进行合成，或者在特定地方使用，帮助你推进游戏进程。","By exploring and interacting with the environment, and characters, you will obtain various items.
+
+After picking up an item, you can select it from the inventory.
+
+The selected item can be combined with other items in the inventory, or used in specific locations,to help you progress through the game."
+ask_save_and_exit,保存并退出？,Save and exit?
+yes,是,Yes
+no,否,No
+player,玩家,Player
+login,登录,Login
+incorrect_password,密码错误,Incorrect password
+correct_password,密码正确,Correct password
+
+dialog.0,发生什么了？,What happened?
+dialog.1,%s，,"%s, "
+dialog.1.1,你还在吗？,are you still there?
+dialog.2,你知道吗，我把太阳放到这上面之后就睡着了。,Did you know that I put the sun on this spot and it fell asleep after that?
+dialog.3,好吧，起码你在这里。,"Alright, at least you're here. "
+dialog.4,太好了！,"Great! "
+dialog.5,大家应该在下面等我，我觉得我得下去了。,"Everyone should be waiting below, I think I should go down now."
+dialog.6,这是太阳。,This is the sun.
+dialog.7,我不能把它拿下来。,I can't take it down.
+dialog.8,下面的世界看起来很小...,The world below looks so small...
+dialog.9,%s，你知道我把太阳放回去之后发生了什么吗？,"%s, do you know what happened after I put the sun back?"
+dialog.10,好吧... ,Well... 
+dialog.10.1,或许我拯救了世界，又或许像其他人所说的那样，即使有了太阳也没有多大帮助。,"Perhaps I saved the world, or perhaps as others say, even with the sun it didn't help much."
+dialog.11,但是，也许我被永远留在了这里。,"But as you say, perhaps I'm stuck here, forever."
+dialog.12,我的妈妈... ,"My mom... "
+dialog.12.1,我的朋友们... ,"My friends... "
+dialog.13,...,...
+dialog.14,外面很亮。,It's very bright outside.
+dialog.15,太阳发出的光。,The sun shines brightly outside.
+dialog.16,门被锁住了。,The door is locked.
+dialog.17,这是床。,This is a bed.
+dialog.18,现在不是睡觉的时候。,Now is not the time to sleep.
+dialog.19,它不会再打开了。,It won't open again.
+dialog.20,这似乎是某种坏掉的计算机终端。,It seems to be some kind of broken computer terminal.
+
+dialog.wm.0,Niko 感到不安。,Niko feels uneasy.
+dialog.wm.1,你已经太迟了。,You're already too late.
+dialog.wm.2,你为什么不阻止 Niko！,Why didn't you stop Niko!
+dialog.wm.3,现在 Niko 被永远留在了这里。,Now Niko is trapped here forever.
+dialog.wm.4,...,...
+dialog.wm.5,... 你既没有拯救世界，也没有拯救 Niko。,... You neither saved the world nor saved Niko.
+dialog.wm.6,你的“任务”是帮助 Niko 离开。,Your "mission" was to help Niko leave.
+dialog.wm.7,你没有机会了，%s。,"You have no chance anymore, %s."
+
+opt.idk,我不知道。,I don't know.

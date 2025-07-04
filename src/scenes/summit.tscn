@@ -1,0 +1,295 @@
+[gd_scene load_steps=23 format=4 uid="uid://7hhwrrym4l3l"]
+
+[ext_resource type="Script" uid="uid://cvos584s7cbwu" path="res://src/scenes/summit.gd" id="1_n5i2h"]
+[ext_resource type="Texture2D" uid="uid://ce2fop7s51qwh" path="res://src/graphics/panoramas/summit.png" id="1_wh0ca"]
+[ext_resource type="PackedScene" uid="uid://4cnqxvch4tiu" path="res://src/ui/dialog.tscn" id="2_i7b70"]
+[ext_resource type="PackedScene" uid="uid://uf1qp4uner6l" path="res://src/characters/niko.tscn" id="2_lbpkb"]
+[ext_resource type="TileSet" uid="uid://clin3fe68f56c" path="res://src/misc/tilesets.tres" id="3_861kh"]
+[ext_resource type="PackedScene" uid="uid://o6l33u0x55df" path="res://src/characters/tower_scenery.tscn" id="4_8wbt2"]
+[ext_resource type="Texture2D" uid="uid://c4heogrbi3f3s" path="res://src/graphics/misc/cg_wake1.png" id="6_3yn3m"]
+[ext_resource type="Texture2D" uid="uid://cv8dygqjexa7w" path="res://src/graphics/misc/cg_wake2.png" id="7_frmha"]
+[ext_resource type="Texture2D" uid="uid://cywrs1hg1b06w" path="res://src/graphics/misc/cg_wake3.png" id="8_86xi6"]
+[ext_resource type="Texture2D" uid="uid://blu1vr82tkusq" path="res://src/graphics/misc/cg_wake5.png" id="10_ynmc5"]
+[ext_resource type="Texture2D" uid="uid://c80fmkltrmjx" path="res://src/graphics/lights/bulb_ground.png" id="11_nunp7"]
+[ext_resource type="PackedScene" uid="uid://dmg7bsim48vnw" path="res://src/misc/interactable.tscn" id="13_861kh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wbt2"]
+size = Vector2(246, 35)
+
+[sub_resource type="Animation" id="Animation_frmha"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect_CG_Wake:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_3yn3m")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3yn3m"]
+resource_name = "cg_wake"
+length = 5.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect_CG_Wake:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 2.1, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_3yn3m"), ExtResource("7_frmha"), ExtResource("8_86xi6"), ExtResource("10_ynmc5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.7, 4.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_frmha"]
+_data = {
+&"RESET": SubResource("Animation_frmha"),
+&"cg_wake": SubResource("Animation_3yn3m")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_861kh"]
+size = Vector2(98, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eetvq"]
+size = Vector2(238.357, 41.3971)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_i7b70"]
+a = Vector2(-32.394, 8.04224)
+b = Vector2(31.606, 8.04224)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_425im"]
+a = Vector2(-32.394, -9.95776)
+b = Vector2(31.606, -9.95776)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_861kh"]
+a = Vector2(-25.394, -10.9578)
+b = Vector2(-25.394, 15.0422)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_eetvq"]
+a = Vector2(16.606, -10.9578)
+b = Vector2(16.606, 15.0422)
+
+[node name="Summit" type="Node2D"]
+script = ExtResource("1_n5i2h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -41.0
+offset_top = 546.0
+offset_right = 2553.0
+offset_bottom = 2188.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Panoramas" type="Sprite2D" parent="."]
+position = Vector2(1265, 1375)
+scale = Vector2(2, 2)
+texture = ExtResource("1_wh0ca")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(818, 992)
+tile_map_data = PackedByteArray("AAAOAA0AAQADAAEAAAANAA0AAQACAAEAAAANAA4AAQACAAIAAAAOAA4AAQADAAIAAAAPAA4AAQAEAAIAAAAMAA0AAQABAAEAAAAMAA4AAQABAAIAAAALAAoAAQAAAAIAAAAMAAoAAQAAAAIAAAAPAAoAAQAAAAIAAAAQAAoAAQAAAAIAAAANAAwAAQACAAAAAAAOAAwAAQADAAAAAAAPAA0AAQAEAAEAAAA=")
+tile_set = ExtResource("3_861kh")
+
+[node name="TowerScenery" parent="." instance=ExtResource("4_8wbt2")]
+position = Vector2(1265, 1343)
+
+[node name="Niko" parent="." node_paths=PackedStringArray("tile_map_layer") instance=ExtResource("2_lbpkb")]
+position = Vector2(1237, 1431)
+wall_min_slide_angle = 0.785398
+floor_stop_on_slope = false
+floor_constant_speed = true
+tile_map_layer = NodePath("../TileMapLayer")
+
+[node name="Collisions" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Collisions"]
+position = Vector2(1148, 1610)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D"]
+position = Vector2(21, 8)
+polygon = PackedVector2Array(7, 15, -107, -24, -166, -134)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Collisions/StaticBody2D"]
+position = Vector2(372, -131)
+polygon = PackedVector2Array(12, 7, 17, -96, -158, -135)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Collisions/StaticBody2D"]
+position = Vector2(383, 120)
+polygon = PackedVector2Array(-3, -250, -38, -135, -175, -98)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Collisions/StaticBody2D"]
+position = Vector2(31, -26)
+polygon = PackedVector2Array(-9, -240, -125, -231, -178, -99)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D"]
+position = Vector2(113, 38.5)
+shape = SubResource("RectangleShape2D_8wbt2")
+
+[node name="CanvasLayer_CG_Wake" type="CanvasLayer" parent="."]
+
+[node name="CG_Wake" type="ColorRect" parent="CanvasLayer_CG_Wake"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect_CG_Wake" type="TextureRect" parent="CanvasLayer_CG_Wake/CG_Wake"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_3yn3m")
+stretch_mode = 5
+
+[node name="AnimationPlayer_CG_Wake" type="AnimationPlayer" parent="CanvasLayer_CG_Wake/CG_Wake"]
+libraries = {
+&"": SubResource("AnimationLibrary_frmha")
+}
+
+[node name="Timer_Animation" type="Timer" parent="."]
+wait_time = 3.7
+one_shot = true
+
+[node name="Timer_Animation2" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Misc" type="Node" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Misc"]
+position = Vector2(1266, 1384)
+color = Color(1, 0.980392, 0.533333, 0.796078)
+energy = 6.0
+blend_mode = 2
+texture = ExtResource("11_nunp7")
+metadata/_edit_lock_ = true
+
+[node name="Dialog" parent="." instance=ExtResource("2_i7b70")]
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="Interactable3" parent="Interactables" node_paths=PackedStringArray("actor") instance=ExtResource("13_861kh")]
+position = Vector2(1266, 1327)
+actor = NodePath("../..")
+action = "scenery"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Interactable3"]
+shape = SubResource("RectangleShape2D_861kh")
+metadata/_edit_lock_ = true
+
+[node name="Interactable2" parent="Interactables" node_paths=PackedStringArray("actor") instance=ExtResource("13_861kh")]
+position = Vector2(1263, 1635)
+actor = NodePath("../..")
+action = "look_down"
+direction = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Interactable2"]
+position = Vector2(-187.807, -62.5748)
+rotation = 0.71192
+shape = SubResource("RectangleShape2D_eetvq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Interactables/Interactable2"]
+position = Vector2(189, -61)
+rotation = -0.723157
+shape = SubResource("RectangleShape2D_eetvq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/Interactable2"]
+position = Vector2(-5.00002, 16)
+shape = SubResource("RectangleShape2D_eetvq")
+
+[node name="Interactable4" parent="Interactables" node_paths=PackedStringArray("actor") instance=ExtResource("13_861kh")]
+position = Vector2(1266.39, 1464.96)
+actor = NodePath("../..")
+action = "sun"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Interactable4"]
+shape = SubResource("SegmentShape2D_i7b70")
+
+[node name="Interactable7" parent="Interactables" node_paths=PackedStringArray("actor") instance=ExtResource("13_861kh")]
+position = Vector2(1266.39, 1448.96)
+actor = NodePath("../..")
+action = "sun"
+direction = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Interactable7"]
+shape = SubResource("SegmentShape2D_425im")
+
+[node name="Interactable5" parent="Interactables" node_paths=PackedStringArray("actor") instance=ExtResource("13_861kh")]
+position = Vector2(1242.39, 1453.96)
+actor = NodePath("../..")
+action = "sun"
+direction = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Interactable5"]
+shape = SubResource("SegmentShape2D_861kh")
+
+[node name="Interactable6" parent="Interactables" node_paths=PackedStringArray("actor") instance=ExtResource("13_861kh")]
+position = Vector2(1290.39, 1453.96)
+actor = NodePath("../..")
+action = "sun"
+direction = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Interactable6"]
+position = Vector2(8, 0)
+shape = SubResource("SegmentShape2D_eetvq")
+
+[connection signal="timeout" from="Timer_Animation" to="." method="_on_timer_animation_timeout"]
+[connection signal="timeout" from="Timer_Animation2" to="." method="_on_timer_animation_2_timeout"]

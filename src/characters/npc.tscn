@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2xwwxogrilgl"]
+
+[ext_resource type="Script" uid="uid://bkr61tmnfw5q" path="res://src/characters/npc.gd" id="1_xrosd"]
+[ext_resource type="Texture2D" uid="uid://bh7lo7gajvg1j" path="res://src/graphics/characters/blue_npc_prophet.png" id="2_742jv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fstj6"]
+size = Vector2(32, 32)
+
+[node name="NPC" type="StaticBody2D"]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_xrosd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("2_742jv")
+hframes = 4
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_fstj6")

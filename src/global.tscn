@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://br4w52rgj7c01"]
+
+[ext_resource type="Script" uid="uid://b5dgdyyv4uafq" path="res://src/global.gd" id="1_r7evp"]
+[ext_resource type="AudioStream" uid="uid://d4fh1lb1n4dgi" path="res://src/audios/BGM/SomeplaceIKnow.ogg" id="2_ifyqw"]
+
+[node name="Global" type="Node"]
+script = ExtResource("1_r7evp")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ifyqw")
+parameters/looping = true

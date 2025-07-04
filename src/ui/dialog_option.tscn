@@ -1,0 +1,147 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgqw705l1bpnf"]
+
+[ext_resource type="Script" uid="uid://b1fn00r2vyb72" path="res://src/ui/dialog_option.gd" id="1_t5sg5"]
+[ext_resource type="Texture2D" uid="uid://btle7m4b3m2m" path="res://src/graphics/ui/dialog_option_body.png" id="1_tn4te"]
+[ext_resource type="Texture2D" uid="uid://rn5dbnmkwmft" path="res://src/graphics/ui/dialog_option_border_corner.png" id="1_w7ue4"]
+[ext_resource type="Texture2D" uid="uid://cbl7px41w0xlj" path="res://src/graphics/ui/dialog_option_border_body.png" id="2_1iemm"]
+
+[node name="DialogOption" type="Control"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+script = ExtResource("1_t5sg5")
+
+[node name="Border" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Border"]
+modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tn4te")
+expand_mode = 1
+
+[node name="Corner1" type="TextureRect" parent="Border"]
+layout_mode = 0
+offset_right = 3.0
+offset_bottom = 3.0
+texture = ExtResource("1_w7ue4")
+
+[node name="Corner2" type="TextureRect" parent="Border"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_right = 3.0
+grow_vertical = 0
+texture = ExtResource("1_w7ue4")
+flip_v = true
+
+[node name="Corner3" type="TextureRect" parent="Border"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -3.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_w7ue4")
+flip_h = true
+flip_v = true
+
+[node name="Corner4" type="TextureRect" parent="Border"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -3.0
+offset_bottom = 3.0
+grow_horizontal = 0
+texture = ExtResource("1_w7ue4")
+flip_h = true
+
+[node name="Body1" type="TextureRect" parent="Border"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_right = -3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+texture = ExtResource("2_1iemm")
+
+[node name="Body2" type="TextureRect" parent="Border"]
+layout_mode = 1
+offset_top = 28.0
+offset_right = 25.0
+offset_bottom = 31.0
+rotation = -1.5708
+texture = ExtResource("2_1iemm")
+expand_mode = 1
+
+[node name="Body3" type="TextureRect" parent="Border"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -3.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_1iemm")
+flip_v = true
+
+[node name="Body4" type="TextureRect" parent="Border"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -3.0
+offset_top = 28.0
+offset_right = 22.0
+offset_bottom = 31.0
+grow_horizontal = 0
+rotation = -1.5708
+texture = ExtResource("2_1iemm")
+expand_mode = 1
+flip_v = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "你好"
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

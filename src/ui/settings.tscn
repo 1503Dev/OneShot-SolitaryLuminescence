@@ -1,0 +1,137 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfen01d6btnlv"]
+
+[ext_resource type="Script" uid="uid://ckvhcy1ir5w3v" path="res://src/ui/settings.gd" id="1_jkmwy"]
+[ext_resource type="PackedScene" uid="uid://dne3s6qipaljp" path="res://src/misc/sound_effect.tscn" id="3_r3fos"]
+[ext_resource type="PackedScene" uid="uid://ds1vbobmii2ko" path="res://src/ui/text_option.tscn" id="4_n3xyg"]
+[ext_resource type="PackedScene" uid="uid://kv7rlo3ma1pq" path="res://src/ui/slider_option.tscn" id="5_o27fk"]
+
+[sub_resource type="Animation" id="Animation_jkmwy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qhfw4"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ewueg"]
+_data = {
+&"RESET": SubResource("Animation_jkmwy"),
+&"fade_in": SubResource("Animation_qhfw4")
+}
+
+[node name="Settings" type="CanvasLayer"]
+process_mode = 3
+layer = 5
+script = ExtResource("1_jkmwy")
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.423529)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+libraries = {
+&"": SubResource("AnimationLibrary_ewueg")
+}
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 42.667
+offset_top = 42.667
+offset_right = 170.667
+offset_bottom = 74.667
+theme_override_font_sizes/font_size = 32
+text = "settings"
+
+[node name="SoundEffect" parent="Control" instance=ExtResource("3_r3fos")]
+
+[node name="SoundEffect2" parent="Control" instance=ExtResource("3_r3fos")]
+
+[node name="SoundEffect3" parent="Control" instance=ExtResource("3_r3fos")]
+
+[node name="Control" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 77.333
+offset_top = 120.889
+offset_right = 37.333
+offset_bottom = 80.889
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextOption_Language" parent="Control/Control" node_paths=PackedStringArray("sound_effect", "sound_effect_2") instance=ExtResource("4_n3xyg")]
+layout_mode = 1
+text = "language"
+key = "language"
+value = "en-US"
+option_values = ["en-US", "zh-CN"]
+option_texts = ["English (US)", "简体中文 (中国大陆)"]
+sound_effect = NodePath("../../SoundEffect")
+sound_effect_2 = NodePath("../../SoundEffect2")
+
+[node name="TextOption_DefaultMovement" parent="Control/Control" node_paths=PackedStringArray("sound_effect", "sound_effect_2") instance=ExtResource("4_n3xyg")]
+layout_mode = 1
+offset_top = 27.111
+offset_bottom = 54.222
+text = "default_movement"
+key = "default_movement"
+value = "walk"
+option_values = ["walk", "run"]
+option_texts = ["default_movement.walk", "default_movement.run"]
+sound_effect = NodePath("../../SoundEffect")
+sound_effect_2 = NodePath("../../SoundEffect2")
+
+[node name="TextOption_Fullscreen" parent="Control/Control" node_paths=PackedStringArray("sound_effect", "sound_effect_2") instance=ExtResource("4_n3xyg")]
+layout_mode = 1
+offset_top = 246.222
+offset_bottom = 273.333
+text = "fullscreen"
+sound_effect = NodePath("../../SoundEffect")
+sound_effect_2 = NodePath("../../SoundEffect2")
+
+[node name="SliderOption" parent="Control/Control" instance=ExtResource("5_o27fk")]
+offset_top = 54.333
+offset_bottom = 81.333
+text = "bgm_volume"
+key = "bgm_volume"
+max = 120
